@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary Cursor</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: lime;
+      font-family: monospace;
+      font-size: 24px;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      height: 100vh;
+    }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="text">
+    <span id="content">01100001 01110000 01110010 01101001 01101100</span><span class="cursor">|</span>
+  </div>
+
+  <script>
+    const content = document.getElementById("content");
+
+    setTimeout(() => {
+      content.textContent = "Spiele werden gelöscht";
+    }, 2000);
+
+    setTimeout(() => {
+      content.textContent = "Spiele sind erfolgreich gelöscht";
+    }, 4000);
+
+    setTimeout(() => {
+      content.textContent = ""; 
+    }, 6000);
+  </script>
+</body>
+</html>
